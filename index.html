@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emojii Toggle</title>
+    <style>
+        body{
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            min-height: 100vh;
+        }
+        .title{
+            text-align: center;
+            font-size: 50px;
+        }
+        .container{
+            background-color: #ffff;
+            width: 400px;
+            display: felx;
+            margin: 7px auto;
+            justify-content: center ;
+            padding :10px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px black;
+        }
+        .emg-img{
+            height: 250px;
+            display: flex;
+            padding: 15px;
+            margin: 10px auto;
+        }
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .btn{
+            background-color: black;
+            color: #ffff;
+            font-size: 22px;
+            border-radius: 50px;
+            border: none;
+            width: 90px;
+            padding: 8px;
+            margin: 0 9px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 600px)
+        {
+            .container{
+                width: 90%;
+            }
+            .emg-img{
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Mood Swing</h1></body>
+    <div class="container">
+        <img src="./img/happy-face.png" class="emg-img" id="emojii"/>
+    </div>
+    <div class="btn-container">
+        <button type="button" class="btn" onclick="emoji('smile')">Smile</button>
+        <button type="button" class="btn" onclick="emoji('sad')">Sad</button>
+        <button type="button" class="btn" onclick="emoji('excited')">Excited</button>
+        <button type="button" class="btn" onclick="emoji('happy-face')">Happy</button>
+    </div>
+    <script>
+        function emoji(state){
+            const element = document.getElementById("emojii");
+            if(state=='sad'){
+                element.src = "./img/sad.png";
+            }
+            else if(state=='excited'){
+                element.src = "./img/excited.png";
+            }
+            else if(state=='smile'){
+                element.src = "./img/smile.png";
+            }
+            else if(state=='happy-face'){
+                element.src = "./img/happy-face.png";
+            }
+        }   
+    </script>
+</body>
+</html>
